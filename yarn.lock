@@ -712,13 +712,6 @@
     react-native-safe-area-view "^0.13.0"
     react-native-screens "^1.0.0 || ^1.0.0-alpha"
 
-"@types/ex-react-native-i18n@^0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@types/ex-react-native-i18n/-/ex-react-native-i18n-0.0.0.tgz#fe48b4587254192a798ffca9a91611f5a5398e57"
-  integrity sha512-qF107g2+IOCHhXIYMtiz4tMsSxs5eY1S73hviWQACPaRx2n9dwXgGIzpQ1pQT8ZF3+NWQyXSFZm4Cfw8QBl6Aw==
-  dependencies:
-    "@types/i18n-js" "*"
-
 "@types/expo@^32.0.7":
   version "32.0.7"
   resolved "https://registry.yarnpkg.com/@types/expo/-/expo-32.0.7.tgz#3fc522130d6cc8b5dc9685b1d51e39264651ca9b"
@@ -740,11 +733,6 @@
   integrity sha512-O2OGyW9wlO2bbDmZRH17MecArQfsIa1g//ve2IJk6BnmwEglFz5kdhP1BlgeqjVNH5IHIhsc83DWFo8StCe8+Q==
   dependencies:
     "@types/react" "*"
-
-"@types/i18n-js@*":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/i18n-js/-/i18n-js-3.0.1.tgz#e027d35513b2703e5d48b82771e7fcb3b664e2fb"
-  integrity sha512-m7tWPh9zKpQoYenIpkmeREb2oMaZiZB8qfGv+2ucDg1LgFnETAxYIXkT8dASGyVRWZyEhNEPlfODP4+QfXI3KQ==
 
 "@types/invariant@^2.2.29":
   version "2.2.29"
@@ -1413,7 +1401,7 @@ color@~1.0.3:
     color-convert "^1.8.2"
     color-string "^1.4.0"
 
-commander@^2.15.1, commander@^2.9.0:
+commander@^2.9.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
@@ -1730,20 +1718,6 @@ eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
   integrity sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA==
-
-ex-react-native-i18n-ts@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/ex-react-native-i18n-ts/-/ex-react-native-i18n-ts-0.0.6.tgz#cf1524cf697cb41f267a695b7b37ada6a3a47b52"
-  integrity sha512-gDaOugIoFDk5Z2D11RJRLVvzGqdrrFO83jTxRsfDV46yyAP9XdgU0Y6c4YJDaoMFDzTrLjZcx8zvFXh90bQRhw==
-  dependencies:
-    commander "^2.15.1"
-    mkdirp "^0.5.1"
-    typescript "^2.7.2"
-
-ex-react-native-i18n@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/ex-react-native-i18n/-/ex-react-native-i18n-0.0.5.tgz#af8cb2e85b2075292627794ff8ca1657d1151f9c"
-  integrity sha512-vjlFkZboGHCtplFWkOnQgkSzRYYwyiciJHaTdpB283qcuascIIKCobiFsTzohDg6v2cecodFpxDEMx6itLlUGQ==
 
 exec-sh@^0.2.0:
   version "0.2.2"
@@ -5238,11 +5212,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typescript@^2.7.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
-  integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
 
 typescript@^3.3.3333:
   version "3.3.3333"
