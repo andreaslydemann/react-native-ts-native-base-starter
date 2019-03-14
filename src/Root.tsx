@@ -1,6 +1,7 @@
 import {Font, AppLoading} from 'expo';
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {AppScreen} from "./screens";
+import I18n from './locale';
 
 interface State {
   isReady: boolean;
@@ -14,8 +15,8 @@ export default class Root extends Component<void, State> {
     };
   }
 
-  componentWillMount() {
-    this.loadFonts();
+  async componentWillMount() {
+    await Promise.all([I18n.initAsync(), this.loadFonts()])
   }
   
   async loadFonts() {
@@ -33,10 +34,8 @@ export default class Root extends Component<void, State> {
   }
 
   render() {
-    if (!this.state.isReady) {
-      return <AppLoading />;
-    }
-
-    return <AppScreen />;
+    return(
+      !this.state.isReady ? <AppLoading /> : <AppScreen />
+    );
   }
 }

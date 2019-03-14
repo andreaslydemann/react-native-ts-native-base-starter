@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Button, Text, StyleSheet } from "react-native";
+import I18n from '../locale';
 
 /** models */
 export interface AppPropConnectedState {
@@ -21,7 +22,7 @@ export class AppComponent extends React.Component<AppProp, AppState> {
   render(): JSX.Element {
     return (
       <View style={styles.container}>
-        <Text>Redux Sample: props.number = {this.props.number}</Text>
+        <Text>{I18n.t('title')} {this.props.number}</Text>
         <Button title="increment" onPress={this.props.handlePressIncrement} />
         <Button title="decrement" onPress={this.props.handlePressDecrement} />
       </View>
