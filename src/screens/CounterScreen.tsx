@@ -5,24 +5,25 @@ import {
 } from "../components";
 import { Dispatch } from "react";
 import { connect } from "react-redux";
-import { HelloState } from "../state";
-import * as SampleModule from "../modules";
+import { CounterState } from "../reducers/interfaces/IRootState";
+import * as Actions from "../actions";
+import IAction from "../actions/interfaces/IAction";
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<SampleModule.Action>
+  dispatch: Dispatch<IAction<any>>
 ): AppPropConnectedDispatcher => {
   return {
     handlePressIncrement: () => {
-      return dispatch(SampleModule.increment());
+      return dispatch(Actions.increment());
     },
     handlePressDecrement: () => {
-      return dispatch(SampleModule.decrement());
+      return dispatch(Actions.decrement());
     }
   };
 };
 
-const mapStateToProps = (state: HelloState): AppPropConnectedState => ({
-  number: state.number
+const mapStateToProps = (state: CounterState): AppPropConnectedState => ({
+  number: state.value
 });
 
 export const HomeScreen = connect(

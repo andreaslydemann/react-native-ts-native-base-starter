@@ -1,19 +1,16 @@
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { configureStore } from "./src/store";
+import RootComponent from "./src/Root";
 
-import React, {Component} from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { state } from './src/state';
-import Root from './src/Root';
-import * as SampleModule from './src/modules';
-
-const store = createStore(SampleModule.reducer, state);
+const store = configureStore();
 
 export default class App extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Root/>
-            </Provider>
-        );
-    }
+  render() {
+    return (
+      <Provider store={store}>
+        <RootComponent />
+      </Provider>
+    );
+  }
 }
