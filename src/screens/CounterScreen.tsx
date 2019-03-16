@@ -1,36 +1,23 @@
+import AppComponent from "../components/AppComponent";
 import {
-  AppPropConnectedDispatcher,
-  AppPropConnectedState,
-  AppComponent
-} from "../components";
-import { Dispatch } from "react";
-import { connect } from "react-redux";
-import { CounterState } from "../reducers/interfaces/IRootState";
-import * as Actions from "../actions";
-import IAction from "../actions/interfaces/IAction";
+  Body,
+  Button,
+  Header,
+  Icon,
+  Left,
+  Right,
+  Title,
+  Container,
+  Label
+} from "native-base";
+import React from "react";
 
-const mapDispatchToProps = (
-  dispatch: Dispatch<IAction<any>>
-): AppPropConnectedDispatcher => {
-  return {
-    handlePressIncrement: () => {
-      return dispatch(Actions.increment());
-    },
-    handlePressDecrement: () => {
-      return dispatch(Actions.decrement());
-    }
-  };
-};
-
-const mapStateToProps = ({
-  counters
-}: {
-  counters: CounterState;
-}): AppPropConnectedState => ({
-  value: counters.value
-});
-
-export const HomeScreen = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AppComponent);
+export class CounterScreen extends React.Component {
+  render(): JSX.Element {
+    return (
+      <Container>
+        <AppComponent />
+      </Container>
+    );
+  }
+}

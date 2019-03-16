@@ -1,18 +1,18 @@
 import IAction from "./interfaces/IAction";
 
-export enum ActionType {
-  INCREMENT,
-  DECREMENT
-}
+export const COUNTER_TYPES = {
+  INCREMENT: "INCREMENT",
+  DECREMENT: "DECREMENT"
+};
 
 export const increment = (): IAction<any> => {
   return {
-    type: ActionType.INCREMENT
+    type: COUNTER_TYPES.INCREMENT
   };
 };
 
 export const decrement = (): IAction<any> => {
   return {
-    type: ActionType.DECREMENT
+    type: COUNTER_TYPES.DECREMENT
   };
 };

@@ -14,9 +14,9 @@ interface State {
   isReady: boolean;
 }
 
-export default class RootComponent extends Component<{}, State> {
-  constructor() {
-    super({});
+export default class RootComponent extends Component<any, State> {
+  constructor(props: any) {
+    super(props);
 
     this.state = {
       isReady: false

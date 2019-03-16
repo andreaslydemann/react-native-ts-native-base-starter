@@ -1,23 +1,24 @@
-import React from "react";
+import React, { Dispatch } from "react";
+import { CounterState } from "../reducers/interfaces/IRootState";
 import { View, Button, Text, StyleSheet } from "react-native";
-
+import IAction from "../actions/interfaces/IAction";
+import * as Actions from "../actions";
+import { connect } from "react-redux";
 import i18n from "i18n-js";
 
 /** models */
-export interface AppPropConnectedState {
+interface PropsConnectedState {
   value: number;
 }
-export interface AppPropConnectedDispatcher {
+interface PropsConnectedDispatcher {
   handlePressIncrement: () => void;
   handlePressDecrement: () => void;
 }
-export interface AppProp
-  extends AppPropConnectedState,
-    AppPropConnectedDispatcher {}
-export interface AppState {}
 
-export class AppComponent extends React.Component<AppProp, AppState> {
-  constructor(props: AppProp) {
+interface Props extends PropsConnectedState, PropsConnectedDispatcher {}
+
+class AppComponent extends React.Component<any> {
+  constructor(props: Props) {
     super(props);
   }
 
@@ -34,6 +35,34 @@ export class AppComponent extends React.Component<AppProp, AppState> {
     );
   }
 }
+
+const mapStateToProps = ({
+  counter
+}: {
+  counter: CounterState;
+}): PropsConnectedState => {
+  return {
+    value: counter.value
+  };
+};
+
+const mapDispatchToProps = (
+  dispatch: Dispatch<IAction<any>>
+): PropsConnectedDispatcher => {
+  return {
+    handlePressIncrement: () => {
+      return dispatch(Actions.increment());
+    },
+    handlePressDecrement: () => {
+      return dispatch(Actions.decrement());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppComponent as React.ComponentClass<Props>);
 
 const styles = StyleSheet.create({
   container: {

@@ -3,7 +3,7 @@
 } from '../models';*/
 
 export interface IRootState {
-  counters: CounterState;
+  counter: CounterState;
 }
 
 export type CounterState = {
