@@ -14,12 +14,12 @@ export default function(
     case ActionType.INCREMENT:
       return {
         ...state,
-        number: ++state.value
+        value: ++state.value
       };
     case ActionType.DECREMENT:
       return {
         ...state,
-        number: --state.value
+        value: --state.value
       };
     default:
       return state;

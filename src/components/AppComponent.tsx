@@ -5,7 +5,7 @@ import i18n from "i18n-js";
 
 /** models */
 export interface AppPropConnectedState {
-  number: number;
+  value: number;
 }
 export interface AppPropConnectedDispatcher {
   handlePressIncrement: () => void;
@@ -16,7 +16,6 @@ export interface AppProp
     AppPropConnectedDispatcher {}
 export interface AppState {}
 
-/** component */
 export class AppComponent extends React.Component<AppProp, AppState> {
   constructor(props: AppProp) {
     super(props);
@@ -27,7 +26,7 @@ export class AppComponent extends React.Component<AppProp, AppState> {
       <View style={styles.container}>
         <Text>
           {i18n.t("foo")} {i18n.t("bar", { someValue: Date.now() })}
-          -- {this.props.number}
+          -- {this.props.value}
         </Text>
         <Button title="increment" onPress={this.props.handlePressIncrement} />
         <Button title="decrement" onPress={this.props.handlePressDecrement} />

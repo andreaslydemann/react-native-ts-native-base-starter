@@ -22,8 +22,12 @@ const mapDispatchToProps = (
   };
 };
 
-const mapStateToProps = (state: CounterState): AppPropConnectedState => ({
-  number: state.value
+const mapStateToProps = ({
+  counters
+}: {
+  counters: CounterState;
+}): AppPropConnectedState => ({
+  value: counters.value
 });
 
 export const HomeScreen = connect(
