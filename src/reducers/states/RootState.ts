@@ -4,6 +4,6 @@
 
 import { CounterState } from "./CounterState";
 
-export interface IRootState {
+export interface RootState {
   counter: CounterState;
 }

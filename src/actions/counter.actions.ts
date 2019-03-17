@@ -1,17 +1,17 @@
-import IAction from "./interfaces/IAction";
+import Action from "./interfaces/Action";
 
 export const COUNTER_TYPES = {
   INCREMENT: "INCREMENT",
   DECREMENT: "DECREMENT"
 };
 
-export const increment = (): IAction<any> => {
+export const increment = (): Action<any> => {
   return {
     type: COUNTER_TYPES.INCREMENT
   };
 };
 
-export const decrement = (): IAction<any> => {
+export const decrement = (): Action<any> => {
   return {
     type: COUNTER_TYPES.DECREMENT
   };

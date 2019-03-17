@@ -1,17 +1,17 @@
 import { Store, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import rootReducer from "../reducers";
-import { IRootState } from "../reducers/interfaces/IRootState";
+import { RootState } from "../reducers/states/";
 import { logger } from "./middleware";
+import rootReducer from "../reducers";
 
-export function configureStore(initialState?: IRootState): Store<IRootState> {
+export function configureStore(initialState?: RootState): Store<RootState> {
   const middleware = composeWithDevTools(applyMiddleware(logger));
 
   const store = createStore(
     rootReducer as any,
     initialState as any,
     middleware
-  ) as Store<IRootState>;
+  ) as Store<RootState>;
 
   return store;
 }

@@ -1,5 +1,5 @@
 import { CounterState } from "./states";
-import IAction from "../actions/interfaces/IAction";
+import Action from "../actions/interfaces/Action";
 import { COUNTER_TYPES } from "../actions/counter.actions";
 
 let initialState: CounterState = {
@@ -8,7 +8,7 @@ let initialState: CounterState = {
 
 export default function(
   state: CounterState = initialState,
-  action: IAction<any>
+  action: Action<any>
 ) {
   switch (action.type) {
     case COUNTER_TYPES.INCREMENT:

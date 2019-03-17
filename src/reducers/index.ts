@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { IRootState } from "./interfaces/IRootState";
+import { RootState } from "./states";
 import counterReducer from "./counter.reducer";
 
-const reducers = combineReducers<IRootState>({
+const reducers = combineReducers<RootState>({
   counter: counterReducer
 });
 

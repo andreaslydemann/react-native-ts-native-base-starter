@@ -2,7 +2,7 @@ import React, { Dispatch } from "react";
 import { CounterState } from "../reducers/states/";
 import { Text, Button } from "native-base";
 import { StyleSheet, View } from "react-native";
-import IAction from "../actions/interfaces/IAction";
+import Action from "../actions/interfaces/Action";
 import * as Actions from "../actions";
 import { connect } from "react-redux";
 import i18n from "i18n-js";
@@ -59,7 +59,7 @@ const mapStateToProps = ({
 };
 
 const mapDispatchToProps = (
-  dispatch: Dispatch<IAction<any>>
+  dispatch: Dispatch<Action<any>>
 ): PropsConnectedDispatcher => {
   return {
     handlePressIncrement: () => {
