@@ -1,24 +1,15 @@
-import React, { Dispatch } from "react";
-import { CounterState } from "../reducers/states/";
+import React from "react";
 import { Text, Button } from "native-base";
 import { StyleSheet, View } from "react-native";
-import Action from "../actions/interfaces/Action";
-import * as Actions from "../actions";
-import { connect } from "react-redux";
 import i18n from "i18n-js";
 
-/** models */
-interface PropsConnectedState {
-  value: number;
-}
-interface PropsConnectedDispatcher {
+interface Props {
   handlePressIncrement: () => void;
   handlePressDecrement: () => void;
+  showResult: () => void;
 }
 
-interface Props extends PropsConnectedState, PropsConnectedDispatcher {}
-
-class Clicker extends React.Component<any> {
+export default class Clicker extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
   }
@@ -47,34 +38,6 @@ class Clicker extends React.Component<any> {
     );
   }
 }
-
-const mapStateToProps = ({
-  counter
-}: {
-  counter: CounterState;
-}): PropsConnectedState => {
-  return {
-    value: counter.value
-  };
-};
-
-const mapDispatchToProps = (
-  dispatch: Dispatch<Action<any>>
-): PropsConnectedDispatcher => {
-  return {
-    handlePressIncrement: () => {
-      return dispatch(Actions.increment());
-    },
-    handlePressDecrement: () => {
-      return dispatch(Actions.decrement());
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Clicker as React.ComponentClass<Props>);
 
 const styles = StyleSheet.create({
   button: { alignSelf: "center" }

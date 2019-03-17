@@ -1,13 +1,23 @@
 import { Result, AppHeader } from "../components";
 import { Content, Container } from "native-base";
+import { CounterState } from "../reducers/states/";
 import React from "react";
+import { connect } from "react-redux";
 import i18n from "i18n-js";
 
-interface Props {
-  navigation: { navigate: (screen: string) => void; goBack: () => void };
+interface PropsConnectedState {
+  value: number;
 }
 
-export class ResultScreen extends React.Component<Props> {
+interface Props extends PropsConnectedState {
+  navigation: { goBack: () => void };
+}
+
+class ResultScreen extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   onLeftButtonPress = () => {
     this.props.navigation.goBack();
   };
@@ -22,9 +32,26 @@ export class ResultScreen extends React.Component<Props> {
         />
 
         <Content padder>
-          <Result />
+          <Result value={this.props.value} />
         </Content>
       </Container>
     );
   }
 }
+
+const mapStateToProps = ({
+  counter
+}: {
+  counter: CounterState;
+}): PropsConnectedState => {
+  console.log("hello");
+  console.log(counter);
+  return {
+    value: counter.value
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(ResultScreen as React.ComponentClass<Props>);
