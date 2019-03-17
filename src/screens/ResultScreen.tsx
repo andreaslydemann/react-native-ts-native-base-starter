@@ -44,8 +44,6 @@ const mapStateToProps = ({
 }: {
   counter: CounterState;
 }): PropsConnectedState => {
-  console.log("hello");
-  console.log(counter);
   return {
     value: counter.value
   };
