@@ -1,4 +1,4 @@
-import { CounterState } from "./interfaces/IRootState";
+import { CounterState } from "./states";
 import IAction from "../actions/interfaces/IAction";
 import { COUNTER_TYPES } from "../actions/counter.actions";
 

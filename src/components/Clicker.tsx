@@ -1,5 +1,5 @@
 import React, { Dispatch } from "react";
-import { CounterState } from "../reducers/interfaces/IRootState";
+import { CounterState } from "../reducers/states/";
 import { Text, Button } from "native-base";
 import { StyleSheet, View } from "react-native";
 import IAction from "../actions/interfaces/IAction";

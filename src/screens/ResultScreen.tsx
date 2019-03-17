@@ -1,39 +1,25 @@
-import { Result } from "../components";
-import {
-  Header,
-  Title,
-  Body,
-  Left,
-  Right,
-  Content,
-  Container,
-  Button,
-  Icon
-} from "native-base";
-import { StyleSheet, StatusBar } from "react-native";
+import { Result, AppHeader } from "../components";
+import { Content, Container } from "native-base";
 import React from "react";
 import i18n from "i18n-js";
 
 interface Props {
-  navigation: any;
+  navigation: { navigate: (screen: string) => void; goBack: () => void };
 }
 
 export class ResultScreen extends React.Component<Props> {
+  onLeftButtonPress = () => {
+    this.props.navigation.goBack();
+  };
+
   render(): JSX.Element {
     return (
       <Container>
-        <Header style={styles.header}>
-          <StatusBar barStyle="light-content" />
-          <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon style={styles.backButton} name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title style={styles.title}>{i18n.t("resultHeader")}</Title>
-          </Body>
-          <Right />
-        </Header>
+        <AppHeader
+          showBackButton={true}
+          headerText={i18n.t("resultHeader")}
+          leftButtonPress={this.onLeftButtonPress}
+        />
 
         <Content padder>
           <Result />
@@ -42,13 +28,3 @@ export class ResultScreen extends React.Component<Props> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#03426A"
-  },
-  title: {
-    color: "#fff"
-  },
-  backButton: { color: "#fff" }
-});

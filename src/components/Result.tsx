@@ -1,5 +1,5 @@
 import React from "react";
-import { CounterState } from "../reducers/interfaces/IRootState";
+import { CounterState } from "../reducers/states";
 import { Text } from "native-base";
 import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";

@@ -1,19 +1,10 @@
-import { Clicker } from "../components";
-import {
-  Header,
-  Title,
-  Body,
-  Left,
-  Right,
-  Content,
-  Container
-} from "native-base";
-import { StyleSheet, StatusBar } from "react-native";
+import { Clicker, AppHeader } from "../components";
+import { Content, Container } from "native-base";
 import React from "react";
 import i18n from "i18n-js";
 
 interface Props {
-  navigation: any;
+  navigation: { navigate: (screen: string) => void };
 }
 
 export class ClickerScreen extends React.Component<Props> {
@@ -24,15 +15,7 @@ export class ClickerScreen extends React.Component<Props> {
   render(): JSX.Element {
     return (
       <Container>
-        <Header style={styles.header}>
-          <StatusBar barStyle="light-content" />
-          <Left />
-          <Body>
-            <Title style={styles.title}>{i18n.t("clickerHeader")}</Title>
-          </Body>
-          <Right />
-        </Header>
-
+        <AppHeader headerText={i18n.t("clickerHeader")} />
         <Content padder>
           <Clicker showResult={this.onShowResultPress} />
         </Content>
@@ -40,12 +23,3 @@ export class ClickerScreen extends React.Component<Props> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#03426A"
-  },
-  title: {
-    color: "#fff"
-  }
-});
