@@ -1,6 +1,8 @@
 import { Font, AppLoading } from "expo";
 import React, { Component } from "react";
-import { Root } from "native-base";
+import { Root, StyleProvider } from "native-base";
+import getTheme from "../theme/components";
+import variables from "../theme/variables/commonColor";
 import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import { Localization } from "expo";
@@ -45,9 +47,11 @@ export default class RootComponent extends Component<any, State> {
     return !this.state.isReady ? (
       <AppLoading />
     ) : (
-      <Root>
-        <Navigator />
-      </Root>
+      <StyleProvider style={getTheme(variables)}>
+        <Root>
+          <Navigator />
+        </Root>
+      </StyleProvider>
     );
   }
 }
