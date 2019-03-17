@@ -1,1 +1,2 @@
-export * from "./CounterScreen";
+export * from "./ClickerScreen";
+export * from "./ResultScreen";

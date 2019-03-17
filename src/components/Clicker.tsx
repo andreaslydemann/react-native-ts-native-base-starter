@@ -1,6 +1,7 @@
 import React, { Dispatch } from "react";
 import { CounterState } from "../reducers/interfaces/IRootState";
-import { View, Button, Text, StyleSheet } from "react-native";
+import { Text, Button } from "native-base";
+import { StyleSheet, View } from "react-native";
 import IAction from "../actions/interfaces/IAction";
 import * as Actions from "../actions";
 import { connect } from "react-redux";
@@ -17,20 +18,31 @@ interface PropsConnectedDispatcher {
 
 interface Props extends PropsConnectedState, PropsConnectedDispatcher {}
 
-class AppComponent extends React.Component<any> {
+class Clicker extends React.Component<any> {
   constructor(props: Props) {
     super(props);
   }
 
   render(): JSX.Element {
     return (
-      <View style={styles.container}>
-        <Text>
-          {i18n.t("foo")} {i18n.t("bar", { someValue: Date.now() })}
-          -- {this.props.value}
-        </Text>
-        <Button title="increment" onPress={this.props.handlePressIncrement} />
-        <Button title="decrement" onPress={this.props.handlePressDecrement} />
+      <View>
+        <Button
+          transparent
+          style={styles.button}
+          onPress={this.props.handlePressIncrement}
+        >
+          <Text>{i18n.t("increment")}</Text>
+        </Button>
+        <Button
+          transparent
+          style={styles.button}
+          onPress={this.props.handlePressDecrement}
+        >
+          <Text>{i18n.t("decrement")}</Text>
+        </Button>
+        <Button primary style={styles.button} onPress={this.props.showResult}>
+          <Text>{i18n.t("showResult")}</Text>
+        </Button>
       </View>
     );
   }
@@ -62,13 +74,8 @@ const mapDispatchToProps = (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AppComponent as React.ComponentClass<Props>);
+)(Clicker as React.ComponentClass<Props>);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+  button: { alignSelf: "center" }
 });

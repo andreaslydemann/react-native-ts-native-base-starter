@@ -1,4 +1,8 @@
 export const da = {
-  foo: "Foo",
-  bar: "Bar {{someValue}}"
+  clickerHeader: "Klikker",
+  decrement: "Dekrementér",
+  increment: "Inkrementér",
+  number: "Tallet {{someValue}} er fint!",
+  resultHeader: "Resultat",
+  showResult: "Show Result"
 };
