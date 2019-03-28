@@ -1,6 +1,6 @@
 import { CounterState } from "./states";
-import Action from "../actions/interfaces/Action";
-import { COUNTER_TYPES } from "../actions/counter.actions";
+import { Action } from "actions/interfaces";
+import { COUNTER_TYPES } from "actions";
 
 let initialState: CounterState = {
   value: 0

@@ -1,4 +1,4 @@
-export default interface Action<T> {
+export interface Action<T> {
   type: any;
   payload?: T;
 }
