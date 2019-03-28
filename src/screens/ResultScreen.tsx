@@ -1,6 +1,6 @@
-import { Result, AppHeader } from "../components";
+import { Result, AppHeader } from "components";
 import { Content, Container } from "native-base";
-import { CounterState } from "../reducers/states/";
+import { CounterState } from "reducers/states";
 import React from "react";
 import { connect } from "react-redux";
 import i18n from "i18n-js";
