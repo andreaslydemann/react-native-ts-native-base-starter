@@ -1,8 +1,8 @@
 import { Font, AppLoading } from "expo";
 import React, { Component } from "react";
 import { Root, StyleProvider } from "native-base";
-import getTheme from "theme/components";
-import variables from "theme/variables/commonColor";
+import getTheme from "../theme/components";
+import variables from "../theme/variables/commonColor";
 import Navigator from "./navigation/Navigator";
 import i18n from "i18n-js";
 import { Localization } from "expo";
