@@ -17,7 +17,7 @@ This boilerplate project is _super_ helpful to kick-start your next project, as 
 
 ```bash
 # Clone the repo
-git clone https://github.com/andreaslydemann/react-native-expo-ts-starter.git
+git clone https://github.com/andreaslydemann/react-native-ts-native-base-starter.git
 
 # Install dependencies
 yarn
